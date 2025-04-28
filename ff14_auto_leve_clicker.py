@@ -55,16 +55,16 @@ def leve_order_operation():
     # リーヴ選択ウィンドウが表示されている
     # Level 88の暁月リーヴがデフォルトで選択されている
     # 今回はLevel 86のリーヴを選択する（上選択2回、決定ボタン3回）
-    pyautogui.press(FF14_CURSOR_UP)
-    pyautogui.press(FF14_CURSOR_UP)
-    pyautogui.press(FF14_OK_BUTTON)
+    pyautogui.press(FF14_CURSOR_UP, interval=0.2)
+    pyautogui.press(FF14_CURSOR_UP, interval=0.2)
+    pyautogui.press(FF14_OK_BUTTON, interval=0.2)
     pyautogui.press(FF14_OK_BUTTON)
     pyautogui.press(FF14_OK_BUTTON)
     # 受注ボタンにカーソルが合っている状態のはずなので、受注ボタンを押す
     pyautogui.press(FF14_OK_BUTTON)
     # Escキーでメインメニューに戻る(2回)
-    pyautogui.press(FF14_ESC_BUTTON)
-    pyautogui.press(FF14_ESC_BUTTON)
+    pyautogui.press(FF14_ESC_BUTTON, interval=0.2)
+    pyautogui.press(FF14_ESC_BUTTON, interval=0.2)
 
 
 def leve_delivery_operation():
@@ -143,6 +143,7 @@ if __name__ == "__main__":
             # リーヴ受注フェーズ
             # -----------------------------------------------
             leve_order_operation()
+            time.sleep(1)
 
             # -----------------------------------------------
             # リーヴ納品フェーズ
